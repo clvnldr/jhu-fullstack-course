@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#site-heading {
+  text-align: center;
+}
+
+.menu-heading {
+  border: 1px solid #000000;
+}
+
+.menu-section {
+  background-color: #777777;
+  border: 1px solid #000000;
+  margin: 10px;
+}
+
+/* Desktop View */
+@media (min-width: 992px) {
+
+  .menu-section {
+    width: 32%;
+    float: left;
+    margin: 10px;
+  }
+
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .menu-section{
+    width: 47%;
+    float: left;
+  }
+
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .menu-section {
+    width: 100%;
+  }
+}
