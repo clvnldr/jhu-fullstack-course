@@ -35,7 +35,7 @@ body {
 
 .menu-section:hover {
   overflow: auto;
-  cursor: n-resize;
+  cursor: ns-resize;
 }
 
 article {
