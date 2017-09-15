@@ -1,0 +1,28 @@
+#main-nav {
+  background-color: #4daf51;
+}
+
+#main-nav-heading, #chicken-heading, p {
+  color: #fefffe;
+}
+
+.navbar-toggle {
+  background-color: #458aff;
+  border: none;
+}
+
+button.navbar-toggle.collapsed > span.icon-bar {
+  background-color: #fefffe;
+}
+
+h1 {
+  color: #212121;
+}
+
+#our-menu-heading {
+  margin-bottom: 50px;
+}
+
+#chicken-section {
+  background-color: #398e3d;
+}
