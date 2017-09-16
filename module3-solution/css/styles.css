@@ -1,18 +1,22 @@
 #main-nav {
   background-color: #4daf51;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
 }
 
-#main-nav-heading, #chicken-heading, p {
+#main-nav-heading, h3, p {
   color: #fefffe;
-}
-
-.navbar-toggle {
-  background-color: #458aff;
-  border: none;
 }
 
 button.navbar-toggle.collapsed > span.icon-bar {
   background-color: #fefffe;
+}
+
+#collapsed-menu {
+  padding: 0px;
+}
+
+.list-group {
+  margin-bottom: 0px;
 }
 
 h1 {
@@ -23,6 +27,11 @@ h1 {
   margin-bottom: 50px;
 }
 
-#chicken-section {
+section {
   background-color: #398e3d;
+  border: 1px solid #000000;
+}
+
+a:hover {
+  text-decoration: none;
 }
