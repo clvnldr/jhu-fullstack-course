@@ -335,6 +335,9 @@ function insertItemPortionName(html,
   return html;
 }
 
+function generateRandNum() {
+  return Math.floor(Math.random() * 6) + 1;
+}
 
 global.$dc = dc;
 
