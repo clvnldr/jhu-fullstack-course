@@ -338,6 +338,8 @@ function buildAboutViewHtml(ratingNum, aboutViewHtml) {
     finalHtml = insertProperty(finalHtml, "class"+i, "fa fa-star-o");
   }
 
+  finalHtml = insertProperty(finalHtml, "rating", ratingNum);
+  
   return finalHtml;
 }
 
