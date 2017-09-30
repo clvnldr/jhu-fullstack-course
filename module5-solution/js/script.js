@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutHtml = "snippets/about-snippet.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -153,6 +154,13 @@ dc.loadMenuItems = function (categoryShort) {
     menuItemsUrl + categoryShort,
     buildAndShowMenuItemsHTML);
 };
+
+// load the about view
+dc.loadAboutView = function() {
+  showLoading("#main-content");
+  buildAndShowAboutViewHtml();
+}
+
 
 
 // Builds HTML for the categories page based on the data
@@ -305,6 +313,33 @@ function buildMenuItemsViewHtml(categoryMenuItems,
   return finalHtml;
 }
 
+// Builds HTML for the about page
+function buildAndShowAboutViewHtml() {
+  // Load about snippet for about page
+  $ajaxUtils.sendGetRequest(
+    aboutHtml,
+    function(aboutHtml) {
+      var aboutViewHtml =
+        buildAboutViewHtml(generateRandNum(),aboutHtml);
+        insertHtml("#main-content", aboutViewHtml);
+    },
+    false);
+}
+
+function buildAboutViewHtml(ratingNum, aboutViewHtml) {
+
+  var finalHtml = aboutViewHtml;
+
+  for (var i = 1; i <= ratingNum; i++) {
+    finalHtml = insertProperty(finalHtml, "class"+i, "fa fa-star");
+  }
+
+  for (var i = 5; i >= ratingNum; i--) {
+    finalHtml = insertProperty(finalHtml, "class"+i, "fa fa-star-o");
+  }
+
+  return finalHtml;
+}
 
 // Appends price with '$' if price exists
 function insertItemPrice(html,
@@ -336,7 +371,7 @@ function insertItemPortionName(html,
 }
 
 function generateRandNum() {
-  return Math.floor(Math.random() * 6) + 1;
+  return Math.floor(Math.random() * 5) + 1;
 }
 
 global.$dc = dc;
